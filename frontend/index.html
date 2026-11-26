@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2a20" />
+<title>Hotel Lazzy-Kitchen | Authentic South Indian Dining</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar" id="siteNav" data-active="home"></header>
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Welcome to</div>
+    <h1>HOTEL <span>LAZZY</span>-KITCHEN</h1>
+    <p class="subtitle">Authentic South Indian dining, ordered from your table</p>
+    <p class="location">📍 Coimbatore, Tamil Nadu, India</p>
+  </div>
+</section>
+
+<div class="auth-wrap">
+  <div class="auth-card" id="authCard">
+    <div class="welcome-back" id="welcomeBack" hidden>
+      <h2>Welcome back, <span data-name></span>!</h2>
+      <p>You're already signed in.</p>
+      <a href="menu.html" class="btn btn-gold btn-block">Continue to Menu →</a>
+      <button class="btn btn-secondary btn-block" id="welcomeLogout">Log out</button>
+    </div>
+
+    <div id="authForms">
+      <div class="auth-tabs" role="tablist">
+        <button class="auth-tab active" data-tab="login" role="tab" aria-selected="true">Log In</button>
+        <button class="auth-tab" data-tab="register" role="tab" aria-selected="false">New Customer</button>
+      </div>
+
+      <div class="auth-body">
+        <div class="auth-panel" data-panel="login">
+          <h2>Welcome back</h2>
+          <p class="form-lead">Log in with your registered email or mobile number.</p>
+          <form id="loginForm" novalidate>
+            <div class="form-group">
+              <label for="identifier">Email or Mobile Number</label>
+              <input type="text" id="identifier" name="identifier" autocomplete="username" placeholder="you@example.com or 9876543210" />
+              <div class="form-error" data-err="identifier"></div>
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <div class="pw-wrap">
+                <input type="password" id="loginPassword" name="password" autocomplete="current-password" placeholder="Your password" />
+                <button type="button" class="pw-toggle" data-pw-toggle>Show</button>
+              </div>
+              <div class="form-error" data-err="password"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log In &amp; View Menu</button>
+          </form>
+        </div>
+
+        <div class="auth-panel" data-panel="register" hidden>
+          <h2>Start your dining experience</h2>
+          <p class="form-lead">Register once with your table to order from the menu.</p>
+          <form id="registerForm" novalidate>
+            <div class="form-group">
+              <label for="full_name">Full Name</label>
+              <input type="text" id="full_name" name="full_name" autocomplete="name" placeholder="e.g. Ajay Kumar" />
+              <div class="form-error" data-err="full_name"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" autocomplete="tel" placeholder="9876543210" maxlength="10" inputmode="numeric" />
+                <div class="form-error" data-err="mobile"></div>
+              </div>
+              <div class="form-group">
+                <label for="table_number">Table Number</label>
+                <select id="table_number" name="table_number"><option value="">Select table</option></select>
+                <div class="form-error" data-err="table_number"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+              <div class="form-error" data-err="email"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">Password</label>
+                <div class="pw-wrap">
+                  <input type="password" id="password" name="password" autocomplete="new-password" placeholder="Min 6 chars, 1 letter, 1 number" />
+                  <button type="button" class="pw-toggle" data-pw-toggle>Show</button>
+                </div>
+                <div class="form-error" data-err="password"></div>
+              </div>
+              <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" placeholder="Re-enter password" />
+                <div class="form-error" data-err="confirm_password"></div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Create Account &amp; Start Dining</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="features">
+  <div class="feature"><div class="ico">🍛</div><h3>45 Dishes</h3><p>South Indian tiffin, biryani, mandi, plus snacks &amp; beverages.</p></div>
+  <div class="feature"><div class="ico">📱</div><h3>Order from Your Table</h3><p>No waiting for the menu card. Dine-in only.</p></div>
+  <div class="feature"><div class="ico">⏱️</div><h3>Live Order Tracking</h3><p>Follow your order from kitchen to table.</p></div>
+</section>
+</main>
+<footer><b>Hotel Lazzy-Kitchen</b><br>Coimbatore, Tamil Nadu · Dine-in only · Demo application for learning purposes</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

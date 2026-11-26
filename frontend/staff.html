@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Staff Board | Hotel Lazzy-Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar" id="siteNav" data-active="staff"></header>
+<main>
+<div class="page-title"><h1>Kitchen / Counter Board</h1><p>Update order status. Orders never advance automatically.</p></div>
+<div class="staff-wrap">
+  <div class="staff-bar">
+    <input type="password" id="staffKey" placeholder="Staff key" aria-label="Staff key" />
+    <select id="scope" style="padding:10px 14px;border-radius:999px;border:1.5px solid var(--line)"><option value="active">Active orders</option><option value="all">All orders</option></select>
+    <button class="btn btn-primary btn-sm" id="staffGo">Load</button>
+  </div>
+  <div id="staffList"></div>
+</div>
+</main>
+<footer><b>Hotel Lazzy-Kitchen</b><br>Coimbatore, Tamil Nadu · Dine-in only · Demo application for learning purposes</footer>
+<script src="js/app.js"></script>
+<script src="js/staff.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2a20" />
+<title>Menu | Hotel Lazzy-Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar" id="siteNav" data-active="menu" data-cart></header>
+
+<main class="has-fab">
+<section class="menu-hero">
+  <div class="container">
+    <h1>Our Menu</h1>
+    <p>Freshly prepared, served hot to your table</p>
+    <div id="restaurantStatus"></div>
+  </div>
+</section>
+
+<div class="category-bar">
+  <div class="container">
+    <div class="main-tabs" id="mainTabs" role="tablist" aria-label="Menu categories"></div>
+    <div class="group-chips" id="groupChips"></div>
+  </div>
+</div>
+
+<div class="container" style="padding-bottom:50px">
+  <div id="closedBanner" class="demo-banner danger" style="margin-top:20px" hidden>🔴 Ordering is currently unavailable. The kitchen is closed right now.</div>
+  <div id="menuGrid"></div>
+</div>
+</main>
+<footer><b>Hotel Lazzy-Kitchen</b><br>Coimbatore, Tamil Nadu · Dine-in only · Demo application for learning purposes</footer>
+
+<button class="cart-fab" id="cartFab" aria-label="Open cart"></button>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="cart-header">
+    <div><h2>Your Order</h2><small id="cartSubtitle"></small></div>
+    <button class="cart-close" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItemsList"></div>
+  <div class="cart-summary" id="cartSummary"></div>
+</aside>
+
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>

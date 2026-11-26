@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2a20" />
+<title>Payment | Hotel Lazzy-Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="navbar" id="siteNav" data-active="menu"></header>
+
+<main>
+<div class="page-title"><h1>Confirm &amp; Pay</h1><p>Review your order and choose how you'd like to pay.</p></div>
+
+<div id="emptyState" hidden></div>
+
+<div class="checkout" id="checkout">
+  <section class="panel"><h2>🧾 Order Summary</h2><div id="orderSummary"><div class="spinner"></div></div></section>
+
+  <section class="panel" id="payBlock">
+    <h2>💳 Payment Method</h2>
+    <div class="pay-methods" role="group" aria-label="Payment method">
+      <button type="button" class="pay-method active" data-method="DEMO_CARD" aria-pressed="true">
+        <span class="pay-ico">💳</span><span><b>Demo Card Payment</b><small>Use the demo test card</small></span><span class="pay-radio"></span></button>
+      <button type="button" class="pay-method" data-method="DEMO_QR" aria-pressed="false">
+        <span class="pay-ico">📲</span><span><b>Google Pay (Demo QR)</b><small>Visual simulation, 10 second wait</small></span><span class="pay-radio"></span></button>
+      <button type="button" class="pay-method" data-method="CASH" aria-pressed="false">
+        <span class="pay-ico">💵</span><span><b>Cash Payment</b><small>Pay at the restaurant counter</small></span><span class="pay-radio"></span></button>
+    </div>
+
+    <div class="pay-panel" data-panel="DEMO_CARD">
+      <div class="sim-note">⚠️ <b>Payment simulation only.</b> No real money is charged and no card details are stored.</div>
+      <form id="cardForm" novalidate autocomplete="off">
+        <div class="form-group"><label for="card_number">Card Number</label>
+          <input type="text" id="card_number" name="card_number" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" /></div>
+        <div class="form-row">
+          <div class="form-group"><label for="pin">PIN</label><input type="password" id="pin" name="pin" inputmode="numeric" maxlength="4" placeholder="••••" /></div>
+          <div class="form-group"><label for="cvv">CVV</label><input type="password" id="cvv" name="cvv" inputmode="numeric" maxlength="3" placeholder="•••" /></div>
+        </div>
+        <p class="demo-hint">Demo test card: <code>1234 4321 5678 8765</code> · PIN <code>4321</code> · CVV <code>123</code> <button type="button" id="fillDemo">Fill for me</button></p>
+        <div class="form-error" id="cardError" style="margin-bottom:10px"></div>
+        <button type="submit" class="btn btn-gold btn-block">Pay <span data-total></span> (Demo)</button>
+      </form>
+    </div>
+
+    <div class="pay-panel" data-panel="DEMO_QR" hidden>
+      <div class="sim-note">⚠️ <b>Demo QR only.</b> This picture contains no payment information and starts no transaction. Your order is placed automatically after the simulated confirmation.</div>
+      <div class="qr-stage" id="qrStage"></div>
+    </div>
+
+    <div class="pay-panel" data-panel="CASH" hidden>
+      <div class="cash-box"><div class="big">💵</div><h3>Pay Cash at the Restaurant Counter</h3>
+        <p>No payment details needed. Your order goes to the kitchen now and is marked <b>PENDING_CASH</b> until you pay at the counter.</p></div>
+      <button type="button" class="btn btn-gold btn-block" id="cashConfirm">Confirm Order · <span data-total></span></button>
+    </div>
+  </section>
+</div>
+
+<div class="confirmation" id="confirmation" hidden></div>
+</main>
+<footer><b>Hotel Lazzy-Kitchen</b><br>Coimbatore, Tamil Nadu · Dine-in only · Demo application for learning purposes</footer>
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/payment.js"></script>
+</body>
+</html>
